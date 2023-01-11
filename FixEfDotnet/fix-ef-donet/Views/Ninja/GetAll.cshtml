@@ -1,0 +1,37 @@
+﻿@model IEnumerable<fix_ef_donet.DataContext.NinjaEntity>
+@{
+    ViewData["Title"] = "Ninja View GetAll";
+}
+
+<h2>Ninja Get All</h2>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Color</th>
+            <th>Power</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NinjaName</td>
+                <td>@item.NinjaGender</td>
+                <td>@item.NinjaColor</td>
+                <td>@item.NinjaPower</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Add" class="btn btn-sm btn-primary">Add</a>
+

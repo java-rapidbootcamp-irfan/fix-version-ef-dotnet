@@ -1,0 +1,39 @@
+﻿@model IEnumerable<fix_ef_donet.DataContext.AssetEntity>
+@{
+    ViewData["Title"] = "Asset View GetAll";
+}
+
+<h2>Asset Get All</h2>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Purchase Year</th>
+            <th>Jumlah Asset</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.AssetCode</td>
+                <td>@item.AssetName</td>
+                <td>@item.PurchaseYear</td>
+                <td>@item.JumlahAsset</td>
+                <td>@item.Description</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Add" class="btn btn-sm btn-primary">Add</a>
+

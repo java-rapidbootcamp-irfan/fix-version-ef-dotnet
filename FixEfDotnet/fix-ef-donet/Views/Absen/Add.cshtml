@@ -1,0 +1,49 @@
+﻿@model fix_ef_donet.DataContext.AbsenEntity
+@{
+ViewData["Title"] = "Absen View Data";
+}
+
+<h2>Form Add Absen</h2>
+
+<form asp-controller="Absen" asp-action="Save" method="post">
+   
+    <div class="form-group">
+        <label asp-for="AbsenName"></label>
+        <input asp-for="AbsenName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Izin"></label>
+        <input asp-for="Izin" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sakit"></label>
+        <input asp-for="Sakit" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Absen"></label>
+        <input asp-for="Absen" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="JumlahHadir"></label>
+        <input asp-for="JumlahHadir" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-danger">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

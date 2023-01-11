@@ -1,0 +1,43 @@
+﻿@model fix_ef_donet.DataContext.AssetEntity
+@{
+ViewData["Title"] = "Asset View Data";
+}
+
+<h2>Form Add Asset</h2>
+
+<form asp-controller="Asset" asp-action="Save" method="post">
+    <div class="form-group">
+        <label asp-for="AssetCode"></label>
+        <input asp-for="AssetCode" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AssetName"></label>
+        <input asp-for="AssetName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PurchaseYear"></label>
+        <input asp-for="PurchaseYear" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="JumlahAsset"></label>
+        <input asp-for="JumlahAsset" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-danger">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

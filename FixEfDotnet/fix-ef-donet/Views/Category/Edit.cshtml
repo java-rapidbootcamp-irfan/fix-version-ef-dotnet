@@ -1,0 +1,34 @@
+﻿@model fix_ef_donet.DataContext.CategoryEntity
+@{
+    ViewData["Title"] = "Category Edit Data";
+}
+
+<h2>Form Edit Category</h2>
+
+<form asp-controller="Category" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="CategoryCode"></label>
+        <input asp-for="CategoryCode" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryName"></label>
+        <input asp-for="CategoryName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-secondary">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

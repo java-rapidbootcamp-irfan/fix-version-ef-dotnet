@@ -1,0 +1,30 @@
+﻿@model fix_ef_donet.DataContext.NinjaEntity
+@{
+    ViewData["Title"] = "Detail Ninja";
+}
+
+<h2>Detail Ninja</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.NinjaName</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.NinjaGender</td>
+    </tr>
+    <tr>
+    <th>Name</th>
+        <td>@Model.NinjaColor</td>
+    </tr>
+    <th>Name</th>
+    <td>@Model.NinjaPower</td>
+    </tr>
+
+</table>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-secondary">Back</a>

@@ -1,0 +1,34 @@
+﻿@model fix_ef_donet.DataContext.AssetEntity
+@{
+    ViewData["Title"] = "Detail Asset";
+}
+
+<h2>Detail Asset</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Code</th>
+        <td>@Model.AssetCode</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>@Model.AssetName</td>
+    </tr>
+    <tr>
+        <th>PurchaseYear</th>
+        <td>@Model.PurchaseYear</td>
+    </tr>
+    <tr>
+        <th>Jumlah</th>
+        <td>@Model.JumlahAsset</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+</table>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-secondary">Back</a>

@@ -1,0 +1,42 @@
+﻿@model fix_ef_donet.DataContext.NinjaEntity
+@{
+ViewData["Title"] = "Ninja View Data";
+    Layout = "_Layout";
+}
+
+<h2>Form Add Ninja</h2>
+
+<form asp-controller="Ninja" asp-action="Save" method="post">
+  
+    <div class="form-group">
+        <label asp-for="NinjaName"></label>
+        <input asp-for="NinjaName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NinjaGender"></label>
+        <input asp-for="NinjaGender" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NinjaColor"></label>
+        <input asp-for="NinjaColor" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NinjaPower"></label>
+        <input asp-for="NinjaPower" class="form-control" />
+    </div>
+
+   
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a asp-action="GetAll" class="btn btn-sm btn-danger">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

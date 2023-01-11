@@ -1,0 +1,34 @@
+﻿@model fix_ef_donet.DataContext.HeroEntity
+@{
+    ViewData["Title"] = "Category Edit Data";
+}
+
+<h2>Form Edit Hero</h2>
+
+<form asp-controller="Hero" asp-action="UpdateHero" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="HeroName"></label>
+        <input asp-for="HeroName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HeroRole"></label>
+        <input asp-for="HeroRole" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HeroPower"></label>
+        <input asp-for="HeroPower" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<br />
+<a asp-action="GetAllHero" class="btn btn-sm btn-secondary">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

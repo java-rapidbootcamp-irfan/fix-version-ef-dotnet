@@ -1,0 +1,34 @@
+﻿@model IEnumerable<fix_ef_donet.DataContext.HeroEntity>
+@{
+    ViewData["Title"] = "Hero View GetAllHero";
+}
+
+<h2>Get All Hero</h2>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Power</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.HeroName</td>
+                <td>@item.HeroRole</td>
+                <td>@item.HeroPower</td>
+                <td>
+                    <a asp-action="EditHero" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="DetailHero" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="DeleteHero" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="AddHero" class="btn btn-sm btn-primary">Add</a>

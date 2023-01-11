@@ -1,0 +1,33 @@
+﻿@model fix_ef_donet.DataContext.HeroEntity
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Add New Hero</h2>
+<form asp-controller="Hero" asp-action="SaveHero" method="post">
+    <div class="form-group">
+        <label asp-for="HeroName"></label>
+        <input asp-for="HeroName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HeroRole"></label>
+        <input asp-for="HeroRole" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HeroPower"></label>
+        <input asp-for="HeroPower" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<a asp-action="GetAllHero" class="btn btn-sm btn-danger">Back</a>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
